@@ -1,0 +1,30 @@
+{
+  "name": "mongo-casbin",
+  "version": "1.0.0",
+  "description": "MongoDB adapter for Node-Casbin. Use it for policy storage in MongoDB. No ORM, just official Mongo Driver used",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gdelpu/mongo-casbin.git"
+  },
+  "scripts": {
+    "test": "npm run test",
+    "lint": "eslint -c .eslintrc.json"
+  },
+  "keywords": [
+    "casbin",
+    "MongoDB",
+    "adapter"
+  ],
+  "author": "Grégory DELPU <gdelpu@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "~3.2.7"
+  },
+  "devDependencies": {
+    "@hapi/eslint-plugin-hapi": "^4.3.3",
+    "@hapi/lab": "^19.1.0",
+    "casbin": "~3.0.1",
+    "eslint": "^6.0.1"
+  }
+}
