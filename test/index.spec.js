@@ -13,7 +13,7 @@ const { it, experiment, beforeEach, afterEach } = exports.lab = Lab.script();
 
 experiment('MongoAdapter Class', () => {
 
-    const { MongoAdapter } = Rewire('.');
+    const { MongoAdapter } = Rewire('..');
 
     afterEach(() => {
 
@@ -62,7 +62,7 @@ experiment('MongoAdapter Class', () => {
 experiment('Exports', () => {
 
     let adapter = null;
-    const { MongoAdapter } = require('.');
+    const { MongoAdapter } = require('../lib');
 
     beforeEach(async() => {
 
@@ -98,7 +98,7 @@ experiment('Exports', () => {
 experiment('Adapter', () => {
 
     let adapter = null;
-    const { MongoAdapter } = require('.');
+    const { MongoAdapter } = require('../lib');
 
     const bulkStub = { insert: stub(), execute: stub() };
 
