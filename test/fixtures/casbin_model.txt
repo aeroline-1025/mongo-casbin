@@ -1,0 +1,14 @@
+[request_definition]
+r = sub, mat, type, cmd
+
+[policy_definition]
+p =sub, mat, type, cmd
+
+[role_definition]
+g = _, _
+
+[policy_effect]
+e = some(where (p.eft == allow))
+
+[matchers]
+m = g(r.sub, p.sub) && r.mat == p.mat && r.type == p.type && r.cmd == p.cmd
