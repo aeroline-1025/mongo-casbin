@@ -1,0 +1,11 @@
+{
+  "extends": "hapi",
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+  "rules": {
+    "space-before-function-paren": "off",
+    "prefer-arrow-callback": "warn",
+    "brace-style": ["error","1tbs"]
+  }
+}
