@@ -8,7 +8,7 @@
     "url": "https://github.com/gdelpu/mongo-casbin.git"
   },
   "scripts": {
-    "test": "npm run test",
+    "test": "lab",
     "lint": "eslint -c .eslintrc.json"
   },
   "keywords": [
@@ -22,9 +22,14 @@
     "mongodb": "~3.2.7"
   },
   "devDependencies": {
-    "@hapi/eslint-plugin-hapi": "^4.3.3",
+    "@hapi/code": "^7.0.0",
     "@hapi/lab": "^19.1.0",
-    "casbin": "~3.0.1",
-    "eslint": "^6.0.1"
+    "casbin": "^3.0.7",
+    "chalk": "^3.0.0",
+    "eslint": "^6.0.1",
+    "eslint-config-hapi": "^12.0.0",
+    "eslint-plugin-hapi": "^4.1.0",
+    "rewire": "^4.0.1",
+    "sinon": "^7.5.0"
   }
 }
