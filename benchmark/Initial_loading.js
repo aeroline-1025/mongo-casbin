@@ -3,15 +3,17 @@
 const { PerformanceObserver, performance } = require('perf_hooks');
 const { MongoAdapter } = require('../lib');
 const { newEnforcer } = require('casbin');
-const chalk = require('chalk');
+const Chalk = require('chalk');
 
 
 (async() => {
+
     const obs = new PerformanceObserver((items) => {
+
         if (items.getEntries()[0].name.startsWith('Adding')) {
-            console.log(chalk`${items.getEntries()[0].name} took {red ${items.getEntries()[0].duration}}ms`);
+            console.log(Chalk`${items.getEntries()[0].name} took {red ${items.getEntries()[0].duration}}ms`);
         } else {
-            console.log(chalk`${items.getEntries()[0].name} took {green ${items.getEntries()[0].duration}}ms`);
+            console.log(Chalk`${items.getEntries()[0].name} took {green ${items.getEntries()[0].duration}}ms`);
         }
 
         performance.clearMarks();
@@ -28,6 +30,7 @@ const chalk = require('chalk');
         performance.measure(`Loadding policies `, `startloadpolicies`, `endloadpolicies`);
 
         const getRandomInt = function(max) {
+
             return Math.floor(Math.random() * Math.floor(max));
         };
 
@@ -35,7 +38,7 @@ const chalk = require('chalk');
         const NB_APPS = 15;
 
         console.log('Adding policies');
-        for (let i = 0; i < (NB_APPS + NB_GROUPS); i++) {
+        for (let i = 0; i < (NB_APPS + NB_GROUPS); ++i) {
 
             await e.addPolicy(`group${i}`, 'consult', 'api', 'fal');
             await e.addPolicy(`group${i}`, 'consult', 'old', 'fal');
@@ -86,7 +89,7 @@ const chalk = require('chalk');
         let counter = 0;
 
         performance.mark(`startAdd${counter}`);
-        for (let i = 0; i < 3000; i++) {
+        for (let i = 0; i < 3000; ++i) {
 
             await e.addRoleForUser(`user${i}`, `group${getRandomInt(99)}`);
 

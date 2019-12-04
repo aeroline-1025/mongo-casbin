@@ -3,17 +3,18 @@
 const { PerformanceObserver, performance } = require('perf_hooks');
 const { MongoAdapter } = require('../lib');
 const { newEnforcer } = require('casbin');
-const chalk = require('chalk');
+const Chalk = require('chalk');
 
 const enforceTimes = [];
 
 (async() => {
+
     const obs = new PerformanceObserver((items) => {
 
         if (items.getEntries()[0].name.startsWith('Adding')) {
-            console.log(chalk`${items.getEntries()[0].name} took {red ${items.getEntries()[0].duration}} ms`);
+            console.log(Chalk`${items.getEntries()[0].name} took {red ${items.getEntries()[0].duration}} ms`);
         } else {
-            console.log(chalk`${items.getEntries()[0].name} took {green ${items.getEntries()[0].duration}} ms`);
+            console.log(Chalk`${items.getEntries()[0].name} took {green ${items.getEntries()[0].duration}} ms`);
         }
 
         if (items.getEntries()[0].name.startsWith('Enforce')) {
@@ -25,6 +26,7 @@ const enforceTimes = [];
     obs.observe({ entryTypes: ['measure'] });
 
     const getRandomInt = function(max) {
+
         return Math.floor(Math.random() * Math.floor(max));
     };
 
@@ -61,7 +63,7 @@ const enforceTimes = [];
         const type = ['api', 'old', 'gui'];
         const cmd = ['consult', 'import', 'extract'];
 
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 100; ++i) {
 
             const userId = getRandomInt(2999);
             const maturityId = getRandomInt(2);
@@ -78,5 +80,5 @@ const enforceTimes = [];
         console.log(e.message);
     }
 
-    console.log(chalk`Average enforce time is {green ${enforceTimes.reduce((total, current) => total + current, 0) / enforceTimes.length}}`);
+    console.log(Chalk`Average enforce time is {green ${enforceTimes.reduce((total, current) => total + current, 0) / enforceTimes.length}}`);
 })();
