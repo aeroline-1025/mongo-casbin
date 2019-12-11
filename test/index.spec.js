@@ -126,7 +126,7 @@ experiment('Adapter', () => {
         collectionStub.initializeUnorderedBulkOp.reset();
     });
 
-    it('should use "unordered bulk operation" on SavePolicy', { only: true }, () => {
+    it('should use "unordered bulk operation" on SavePolicy', () => {
         // Act
         adapter.savePolicy({ model: new Map() });
 
