@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "MongoDB adapter for Node-Casbin. Use it for policy storage in MongoDB. No ORM, just official Mongo Driver used",
   "main": "lib/index.js",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/gdelpu/mongo-casbin.git"
@@ -20,6 +22,7 @@
   "author": "Grégory DELPU <gdelpu@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@hapi/joi": "^16.1.8",
     "mongodb": "~3.2.7"
   },
   "devDependencies": {
