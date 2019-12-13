@@ -1,6 +1,6 @@
 {
   "name": "@aeroline_1025/mongo-casbin",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "MongoDB adapter for Node-Casbin. Use it for policy storage in MongoDB. No ORM, just official Mongo Driver used",
   "main": "lib/index.js",
   "files": [
